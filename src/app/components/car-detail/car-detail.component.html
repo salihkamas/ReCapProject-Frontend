@@ -1,0 +1,44 @@
+<div
+  id="carouselExampleSlidesOnly"
+  class="carousel slide"
+  data-bs-ride="carousel"
+>
+  <div class="carousel-inner">
+    <div *ngFor="let image of carImages" class="carousel-item active">
+      <img
+        src="{{ imageUrl }}/{{ image.imagePath }}"
+        class="d-block w-100"
+        alt="..."
+      />
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="..." />
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="..." />
+    </div>
+  </div>
+</div>
+<table class="table-light table text-center">
+  <thead>
+    <tr>
+      <th>Car</th>
+      <th>Brand</th>
+      <th>Color</th>
+      <th>Daily Price</th>
+      <th>Description</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+    *ngFor="let car of cars"
+    class="cursor-pointer"
+  >
+    <td>{{ car.carName }}</td>
+    <td>{{ car.brandName }}</td>
+    <td>{{ car.colorName }}</td>
+    <td>{{ car.dailyPrice }} TL</td>
+    <td>{{ car.description }}</td>
+  </tr>
+  </tbody>

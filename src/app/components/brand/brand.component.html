@@ -1,4 +1,12 @@
 <h2 class="text-center bg-primary fw-bold fst-italic">Brands</h2>
-<ul *ngFor="let brand of brands"  class="list-group">
-    <li class="list-group-item">{{brand.brandName}}</li>
+<ul>
+  <li [class]="getAllBrandClass()" routerLink="/cars">All Brands</li>
+  <li
+    (click)="setCurrentBrand(brand)"
+    routerLink="/cars/brand/{{ brand.brandId }}"
+    *ngFor="let brand of brands"
+    class="list-group-item"
+  >
+    {{ brand.brandName }}
+  </li>
 </ul>
