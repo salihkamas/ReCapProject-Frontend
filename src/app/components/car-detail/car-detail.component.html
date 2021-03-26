@@ -27,18 +27,19 @@
       <th>Color</th>
       <th>Daily Price</th>
       <th>Description</th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
-    <tr
-    *ngFor="let car of cars"
-    class="cursor-pointer"
-  >
-    <td>{{ car.carName }}</td>
-    <td>{{ car.brandName }}</td>
-    <td>{{ car.colorName }}</td>
-    <td>{{ car.dailyPrice }} TL</td>
-    <td>{{ car.description }}</td>
-  </tr>
+    <tr *ngIf="car">
+      <td>{{ car.carName }}</td>
+      <td>{{ car.brandName }}</td>
+      <td>{{ car.colorName }}</td>
+      <td>{{ car.dailyPrice | currency : '₺'}}</td>
+      <td>{{ car.description }}</td>
+    </tr>
   </tbody>
+
+</table>
+  <div *ngIf="car && car.status == true">
+    <app-rental [car]="car"></app-rental>
+  </div>

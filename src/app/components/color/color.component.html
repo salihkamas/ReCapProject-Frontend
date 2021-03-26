@@ -1,11 +1,19 @@
-<h2 class="text-center bg-primary fw-bold fst-italic">Colors</h2>
 <ul>
-  <li [class]="getAllColorClass()" routerLink="/cars">All Colors</li>
+  <li class="list-group-item" routerLink="/cars">
+    <label><h5 class="text-center fw-bold cursor-pointer">Colors</h5></label>
+    <input
+      type="text"
+      [(ngModel)]="filterText"
+      class="form-control"
+      id="filterText"
+      placeholder="Search Color"
+    />
+  </li>
   <li
     (click)="setCurrentColor(color)"
     routerLink="/cars/color/{{ color.colorId }}"
-    *ngFor="let color of colors"
-    [class]="getCurrentColorClass(color)"
+    *ngFor="let color of colors | filterPipeColor: filterText"
+    class="list-group-item"
   >
     {{ color.colorName }}
   </li>

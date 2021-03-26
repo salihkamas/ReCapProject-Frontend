@@ -12,8 +12,8 @@ import { CarService } from 'src/app/services/car.service';
   styleUrls: ['./car-detail.component.css'],
 })
 export class CarDetailComponent implements OnInit {
+  car: Car;
   carImages: CarImage[];
-  cars: Car[];
   imageUrl = 'https://localhost:44301/';
   constructor(
     private carImagesService: CarImageService,
@@ -31,7 +31,8 @@ export class CarDetailComponent implements OnInit {
   }
   getCarDetails(carId: number) {
     this.carService.getCarDetail(carId).subscribe((response) => {
-      this.cars = response.data;
+      this.car = response.data;
+      console.log(response);
     });
   }
   getCarImagesByCarId(carId: number) {
