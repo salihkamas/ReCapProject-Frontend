@@ -39,23 +39,23 @@ export class PaymentComponent implements OnInit {
   }
   totalAmount() {
     if (this.rental.returnDate != null) {
-      let rentDate = new Date(this.rental.returnDate.toString());
-      let returnDate = new Date(this.rental.rentDate.toString());
+      let rentDate = new Date(this.rental.rentDate.toString());
+      let returnDate = new Date(this.rental.returnDate.toString());
 
-      let timeDifference = rentDate.getTime() - returnDate.getTime();
+      let timeDifference = returnDate.getTime() - rentDate.getTime();
 
       let numberOfDays = Math.ceil(timeDifference / (1000 * 3600 * 24));
-      this.amount = numberOfDays * ((this.car.dailyPrice * 8) / 100);
+      this.amount = numberOfDays * this.car.dailyPrice ;
       if (this.amount <= 0) {
         this.router.navigate(['/cars']);
-        this.toastr.error('Error');
+        this.toastr.error('Payment Error');
       }
     }
   }
 
   payment() {
     this.paymentService.payment().subscribe((response) => {
-      this.toastr.success('Succes');
+      this.toastr.success('Payment Successful');
     });
   }
 }

@@ -53,9 +53,9 @@ export class RentalComponent implements OnInit {
       customerId: parseInt(this.customerId.toString()),
     };
     this.rentalService.add(rental).subscribe((response) => {
-      this.toastr.success('Rent Successfuly');
+      this.toastr.success('Rent Successful');
     });
-    
+
     this.router.navigate(['/payment', JSON.stringify(rental)]);
   }
 }
