@@ -1,22 +1,27 @@
-<ul>
-  <li class="list-group-item" routerLink="/cars">
-   <label><h5 class="text-center fw-bold">Brands</h5></label> 
-
+<div class="d-flex flex-column p-3 text-white bg-dark text-center rounded-3 mt-3" style="width: 280px;"> 
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item" routerLink="/cars">
+      <label><h5 class="text-center fw-bold">Brands</h5></label>
 
       <input
         type="text"
         [(ngModel)]="filterText"
         class="form-control"
         id="brandName"
-        placeholder= "Search Brand"
+        placeholder="Search Brand"
       />
-  </li>
-  <li
-    (click)="setCurrentBrand(brand)"
-    routerLink="/cars/brand/{{ brand.brandId }}"
-    *ngFor="let brand of brands | filterPipeBrand: filterText"
-    class="list-group-item"
-  >
-    {{ brand.brandName }}
-  </li>
-</ul>
+    </li>
+    <hr>
+    <li 
+      (click)="setCurrentBrand(brand)"
+      routerLink="/cars/brand/{{ brand.brandId }}"
+      *ngFor="let brand of brands | filterPipeBrand: filterText"
+      class="nav-link text-white"
+    >
+      {{ brand.brandName }}
+    </li>
+  </ul>
+</div>
+
+
+

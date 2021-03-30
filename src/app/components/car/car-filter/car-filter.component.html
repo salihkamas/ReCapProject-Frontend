@@ -16,7 +16,7 @@
   </div>
 
 
-    <div class="col col-4">
+    <div class="col-4">
       <select
         [(ngModel)]="colorF"
         class="form-select"
@@ -31,15 +31,15 @@
         </option>
       </select>
     </div>
-    <div class="col col-2">
+    <div class="col-2">
       <a
         routerLink="/cars/filter/{{ brandF }}/{{ colorF }}"
-        class="btn btn-dark"
+        class="btn btn-outline-dark"
         >Filter</a
       >
     </div>
-    <div class="col col-2">
-      <a routerLink="/cars" class="btn btn-light">Reset</a>
+    <div class="col-2">
+      <a routerLink="/cars" class="btn btn-outline-success">Reset</a>
     </div>
 
 </div>

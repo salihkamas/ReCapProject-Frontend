@@ -1,20 +1,23 @@
-<ul>
-  <li class="list-group-item" routerLink="/cars">
-    <label><h5 class="text-center fw-bold cursor-pointer">Colors</h5></label>
-    <input
-      type="text"
-      [(ngModel)]="filterText"
-      class="form-control"
-      id="filterText"
-      placeholder="Search Color"
-    />
-  </li>
-  <li
-    (click)="setCurrentColor(color)"
-    routerLink="/cars/color/{{ color.colorId }}"
-    *ngFor="let color of colors | filterPipeColor: filterText"
-    class="list-group-item"
-  >
-    {{ color.colorName }}
-  </li>
-</ul>
+<div class="d-flex flex-column p-3 text-white bg-dark text-center mt-3 rounded-3" style="width: 280px;">
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item" routerLink="/cars">
+      <label><h5 class="text-center fw-bold cursor-pointer">Colors</h5></label>
+      <input
+        type="text"
+        [(ngModel)]="filterText"
+        class="form-control"
+        id="filterText"
+        placeholder="Search Color"
+      />
+    </li>
+    <hr>
+    <li
+      (click)="setCurrentColor(color)"
+      routerLink="/cars/color/{{ color.colorId }}"
+      *ngFor="let color of colors | filterPipeColor: filterText"
+      class="nav-link text-white"
+    >
+      {{ color.colorName }}
+    </li>
+  </ul>
+</div>

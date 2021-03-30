@@ -1,0 +1,44 @@
+<table class="table-light fw-bold table text-center">
+  <thead>
+    <tr>
+      <th>Brand ID</th>
+      <th>Brand Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="brand" class="fs-5">
+      <td>{{ brand.brandId }}</td>
+      <td>{{ brand.brandName }}</td>
+    </tr>
+  </tbody>
+</table>
+<div class="content align-self-center">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="title">Brand Update Form</h5>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="brandUpdateForm">
+          <div class="mb-3">
+            <label for="brandNameUpdate">Brand Name</label>
+            <div class="form-group">
+              <input
+                type="text"
+                id="brandNameUpdate"
+                formControlName="brandName"
+                class="form-control"
+                placeholder="Brand Name"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer justify-content-end d-flex">
+        <button class="btn btn-primary btn-fill btn-lg" (click)="update()">
+          UPDATE
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

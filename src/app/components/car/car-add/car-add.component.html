@@ -1,0 +1,88 @@
+<div class="content">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="title">Car Add Form</h5>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="carAddForm">
+          <div class="mb-3">
+            <label for="carNameAdd">Car Name</label>
+            <div class="form-group">
+              <input
+                type="text"
+                id="carNameAdd"
+                formControlName="carName"
+                class="form-control"
+                placeholder="Car Name"
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="brandIdAdd">Brand ID</label>
+            <div class="form-group">
+              <select id="brandIdAdd" class="form-select" formControlName="brandId">
+                <option value="">Brand...</option>
+                <option *ngFor="let brand of brands" [value]="brand.brandId">
+                  {{ brand.brandName }}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="colorIdAdd">Color ID</label>
+            <div class="form-group">
+              <select id="colorIdAdd" class="form-select" formControlName="colorId">
+                <option value="">Color...</option>
+                <option *ngFor="let color of colors" [value]="color.colorId">
+                  {{ color.colorName }}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="modelYearAdd">Model Year</label>
+            <div class="form-group">
+              <input
+                type="text"
+                id="modelYearAdd"
+                formControlName="modelYear"
+                class="form-control"
+                placeholder="Model Year"
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="dailyPriceAdd">Daily Price</label>
+            <div class="form-group">
+              <input
+                type="number"
+                id="dailyPriceAdd"
+                formControlName="dailyPrice"
+                class="form-control"
+                placeholder="Daily Price"
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="descriptionAdd">Description</label>
+            <div class="form-group">
+              <input
+                type="text"
+                id="descriptionAdd"
+                formControlName="description"
+                class="form-control"
+                placeholder="Description"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer justify-content-end d-flex">
+        <button class="btn btn-primary btn-fill btn-lg" (click)="add()">
+          Add
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

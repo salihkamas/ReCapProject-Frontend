@@ -12,15 +12,22 @@ import { ColorComponent } from './components/color/color.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { RentalComponent } from './components/rental/rental.component';
 import { NaviComponent } from './components/navi/navi.component';
-import { CarDetailComponent } from './components/car-detail/car-detail.component';
+import { CarDetailComponent } from './components/car/car-detail/car-detail.component';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 import { FilterPipeBrandPipe } from './pipes/filter-pipe-brand.pipe';
 import { FilterPipeColorPipe } from './pipes/filter-pipe-color.pipe';
-import { CarFilterComponent } from './components/car-filter/car-filter.component';
+import { CarFilterComponent } from './components/car/car-filter/car-filter.component';
 import { PaymentComponent } from './components/payment/payment.component';
 
 import { ToastrModule } from 'ngx-toastr';
 import { FooterComponent } from './components/footer/footer.component';
+import { CarAddComponent } from './components/car/car-add/car-add.component';
+import { BrandAddComponent } from './components/brand/brand-add/brand-add.component';
+import { ColorAddComponent } from './components/color/color-add/color-add.component';
+import { CarUpdateComponent } from './components/car/car-update/car-update.component';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { BrandUpdateComponent } from './components/brand/brand-update/brand-update.component';
+import { ColorUpdateComponent } from './components/color/color-update/color-update.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +45,13 @@ import { FooterComponent } from './components/footer/footer.component';
     CarFilterComponent,
     PaymentComponent,
     FooterComponent,
+    CarAddComponent,
+    BrandAddComponent,
+    ColorAddComponent,
+    CarUpdateComponent,
+    AdminPanelComponent,
+    BrandUpdateComponent,
+    ColorUpdateComponent,
   ],
   imports: [
     BrowserModule,

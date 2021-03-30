@@ -1,0 +1,45 @@
+<table class="table-light fw-bold table text-center">
+    <thead>
+      <tr>
+        <th>Color ID</th>
+        <th>Color Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="color" class="fs-5">
+        <td>{{ color.colorId }}</td>
+        <td>{{ color.colorName }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="content align-self-center">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Color Update Form</h5>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="colorUpdateForm">
+            <div class="mb-3">
+              <label for="colorNameUpdate">Color Name</label>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="colorNameUpdate"
+                  formControlName="colorName"
+                  class="form-control"
+                  placeholder="Color Name"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="card-footer justify-content-end d-flex">
+          <button class="btn btn-primary btn-fill btn-lg" (click)="update()">
+            UPDATE
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

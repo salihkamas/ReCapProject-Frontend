@@ -1,83 +1,73 @@
-<div>
-  <div>
-    <div>
-      <div class="card justify-content-center align-items-left d-flex" style="width: 20rem;">
-        <div class="card-header">
-          <h5>Rent the Car</h5>
-        </div>
+<div  class="card bg-dark text-white row g-3 fw-bold fs-6">
+  <div class="card-header">
+    <h5>Rent the Car</h5>
+  </div>
 
-        <div>
-          <div class="form-group row">
-            <label for="example-date-input">Daily Price</label>
-            <div class="col-8">
-              <input
-                type="text"
-                disabled="disabled"
-                class="form-control"
-                [value]="car.dailyPrice | currency: '₺'"
-                style="width: 18rem"
-              />
-            </div>
-          </div>
-
-          <div class="form-group row">
-            <label for="example-date-input">Customer</label>
-            <div class="col-8">
-              <select
-                style="width: 18rem"
-                class="form-select"
-                [(ngModel)]="customerId"
-              >
-                <option
-                  [value]="customer.customerId"
-                  *ngFor="let customer of customers"
-                >
-                  {{ customer.company }}
-                </option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group row">
-            <label for="example-date-input">Rent Date</label>
-            <div class="col-8">
-              <input
-                class="form-control"
-                min="{{ getDate(1) }}"
-                value="{{ getDate(1) }}"
-                type="date"
-                [(ngModel)]="rentDate"
-                style="width: 18rem"
-              />
-            </div>
-          </div>
-
-          <div class="form-group row">
-            <label for="example-date-input">Return Date</label>
-            <div class="col-8">
-              <input
-                class="form-control"
-                type="date"
-                min="{{ getDate(2) }}"
-                value="{{ getDate(2) }}"
-                [(ngModel)]="returnDate"
-                style="width: 18rem"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div class="d-flex align-items-start flex-column bd-highlight mb-3">
-          <button
-            (click)="add()"
-            type="button"
-            class="btn btn-dark mt-3" 
-            style="width: 10rem"
-          >
-            Rent
-          </button>
-        </div>
+  <div class="row">
+    <div class="form-group col-3">
+      <label for="example-date-input">Daily Price</label>
+      <div>
+        <input
+          type="text"
+          disabled="disabled"
+          class="form-control"
+          [value]="car.dailyPrice | currency: '₺'"
+        />
       </div>
     </div>
+
+    <div class="form-group col-3">
+      <label for="example-date-input">Customer</label>
+      <div>
+        <select
+          class="form-select"
+          [(ngModel)]="customerId"
+        >
+          <option
+            [value]="customer.customerId"
+            *ngFor="let customer of customers"
+          >
+            {{ customer.company }}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group col-3">
+      <label for="example-date-input">Rent Date</label>
+      <div>
+        <input
+          class="form-control"
+          min="{{ getDate(1) }}"
+          value="{{ getDate(1) }}"
+          type="date"
+          [(ngModel)]="rentDate"
+        />
+      </div>
+    </div>
+
+    <div class="form-group col-3">
+      <label for="example-date-input">Return Date</label>
+      <div>
+        <input
+          class="form-control"
+          type="date"
+          min="{{ getDate(2) }}"
+          value="{{ getDate(2) }}"
+          [(ngModel)]="returnDate"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="card-footer d-flex align-items-end flex-column bd-highlight">
+    <button
+      (click)="add()"
+      type="button"
+      class="btn btn-outline-primary btn-fill fw-bold"
+      style="width: 10rem"
+    >
+      Rent
+    </button>
   </div>
 </div>

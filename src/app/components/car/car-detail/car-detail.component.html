@@ -1,13 +1,13 @@
 <div
   id="carouselExampleSlidesOnly"
-  class="carousel slide"
+  class="carousel slide rounded-3"
   data-bs-ride="carousel"
 >
   <div class="carousel-inner">
     <div *ngFor="let image of carImages" class="carousel-item active">
       <img
         src="{{ imageUrl }}/{{ image.imagePath }}"
-        class="d-block w-100"
+        class="d-block w-100 rounded-3"
         alt="..."
       />
     </div>
@@ -19,7 +19,7 @@
     </div>
   </div>
 </div>
-<table class="table-light table text-center">
+<table class="table-light fw-bold table text-center">
   <thead>
     <tr>
       <th>Car</th>
@@ -30,7 +30,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngIf="car">
+    <tr *ngIf="car" class="fs-5">
       <td>{{ car.carName }}</td>
       <td>{{ car.brandName }}</td>
       <td>{{ car.colorName }}</td>
