@@ -9,5 +9,6 @@ export interface Car {
   colorName: string;
   dailyPrice: number;
   description: string;
+  findexPoint: number;
   status: boolean;
 }

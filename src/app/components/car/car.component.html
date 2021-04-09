@@ -12,7 +12,7 @@
     <div class="col-6"><app-car-filter></app-car-filter></div>
   </div>
 </div>
-  <table
+<!-- <table
     *ngIf="dataLoaded == true"
     class="table table-secondary table-striped text-center card-body justify-content-center align-items-center"
   >
@@ -43,5 +43,47 @@
         </td>
       </tr>
     </tbody>
-  </table>
+  </table> -->
 
+<div class="content row">
+  <div
+    *ngFor="let car of cars | filterPipe: filterText"
+    class="card mx-auto mt-3 bg-light rounded-2 shadow overflow-hidden"
+    style="width: 18rem"
+  >
+    <div
+      class="card-header card-img d-flex justify-content-end align-items-center cursor-pointer mt-2 bg-light"
+    >
+      <h5><span class="badge bg-primary text-dark">{{ car.findexPoint }}</span></h5>
+    </div>
+    <div
+      routerLink="/cars/details/{{ car.carId }}"
+      class="card-img d-flex justify-content-center align-items-center cursor-pointer mt-2"
+    >
+      <img
+        src="{{ car.imagePath }}"
+        class="card-img-top"
+        width="auto"
+        height="175px"
+      />
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title">{{ car.carName }}</h5>
+      <h6>{{ car.brandName }}</h6>
+      <h6>{{ car.colorName }}</h6>
+      <h6>{{ car.modelYear }}</h6>
+      <h6>{{ car.dailyPrice | currency: "₺" }}</h6>
+      <div class="d-flex justify-content-end">
+        <button
+          (click)="setCurrentCar(car)"
+          routerLink="/cars/details/{{ car.carId }}"
+          type="button"
+          class="btn btn-outline-primary"
+        >
+          Detail
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

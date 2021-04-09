@@ -10,8 +10,12 @@ import { CarComponent } from './components/car/car.component';
 import { ColorAddComponent } from './components/color/color-add/color-add.component';
 import { ColorUpdateComponent } from './components/color/color-update/color-update.component';
 import { CustomerComponent } from './components/customer/customer.component';
+import { LoginComponent } from './components/login/login.component';
 import { PaymentComponent } from './components/payment/payment.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { RegisterComponent } from './components/register/register.component';
 import { RentalComponent } from './components/rental/rental.component';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   {
@@ -64,7 +68,11 @@ const routes: Routes = [
     path: 'color/add',
     component: ColorAddComponent,
   },
-  { path: 'admin-panel', component: AdminPanelComponent },
+  {
+    path: 'admin-panel',
+    component: AdminPanelComponent,
+    canActivate: [LoginGuard],
+  },
   {
     path: 'cars/update/:carId',
     component: CarUpdateComponent,
@@ -76,6 +84,18 @@ const routes: Routes = [
   {
     path: 'color/update/:colorId',
     component: ColorUpdateComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
   },
 ];
 
