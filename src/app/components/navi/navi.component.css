@@ -1,6 +1,6 @@
 .logo {
     transform: rotate(75deg) translate3d(0, 0, 0);
-    background-image: linear-gradient(#2dc8f3 0, #1497e2 70%);
+    background: linear-gradient(#2dc8f3 0, #1497e2 70%);
     border-radius: 6px;
     position: absolute;
     left: -140px;
@@ -8,4 +8,33 @@
     width: 250px;
     height: 250px;
     z-index: 0;
+    background-size: 200% 200%;
+    animation: animated-gradient 2s linear infinite;
   }
+  @keyframes animated-gradient {
+    25%{
+        background-position: left bottom;
+    }
+    50%{
+        background-position: right bottom;
+    }
+    75%{
+        background-position: right top;
+    }
+    100%{
+        background-position: left top;
+    }
+
+}
+  .btn-1{
+  background-image: linear-gradient(#2dc8f3 0, #1497e2 70%);
+  border:none;
+  
+}
+.btn-2{
+  border: none;
+}
+.btn-2:hover{
+  background-image: linear-gradient(#2dc8f3 0, #1497e2 70%);
+  transition: 0.3s;
+}

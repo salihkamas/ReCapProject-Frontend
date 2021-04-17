@@ -2,6 +2,9 @@ html,
 body {
   height: 50%;
 }
+.btn-1{
+  background-image: linear-gradient(#2dc8f3 0, #1497e2 70%);
+}
 
 body {
   display: flex;

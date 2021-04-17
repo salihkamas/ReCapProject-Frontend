@@ -10,6 +10,9 @@ body {
   padding-bottom: 40px;
   border-radius: 20px;
 }
+.btn-1{
+  background-image: linear-gradient(#2dc8f3 0, #1497e2 70%);
+}
 
 .form-signin {
   width: 100%;
